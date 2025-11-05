@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "Steirarein – Szívvel, Türelemmel és Tapasztalattal",
+    "subtitle": "Tisztaság szívvel — Gondosan ápolt otthona a legjobb kezekben",
+    "description": "Tudjuk, hogy egy rendezett otthon nem csak tiszta, hanem harmonikus is kell legyen. Türelemmel, tapasztalattal és nyitott füllel az Ön igényeire teremtünk rendet és kellemes légkört otthonában."
+  },
+  "services": {
+    "kicker": "Szolgáltatásaink",
+    "title": "Háztartási Gondozás & Takarítás",
+    "list": {
+      "cleaning": "Alapos lakás- vagy háztakarítás",
+      "laundry": "Mosás és vasalás",
+      "shopping": "Bevásárlás intézése",
+      "cooking": "Egyszerű ételek elkészítése",
+      "organization": "Háztartás szervezése (pl. számlák, időpontok)",
+      "support": "Empatikus támogatás a mindennapokban"
+    },
+    "price": "Teljes lakástakarítás 150 €-tól — Óradíj 28 €-tól",
+    "cookingTitle": "Főzési & Szervezési Segítség",
+    "cookingDescription": "Támogatás főzésben és tálalásban — Gondosság, megbízhatóság és figyelem a részletekre."
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "phoneLabel": "Telefon",
+    "orWrite": "Vagy írjon nekünk:",
+    "emailNote": "A lehető leghamarabb jelentkezünk. Email:",
+    "form": {
+      "nameLabel": "Az Ön Neve",
+      "namePlaceholder": "Kovács János",
+      "emailLabel": "Email",
+      "emailPlaceholder": "az.on@email.com",
+      "messageLabel": "Az Ön Üzenete",
+      "messagePlaceholder": "Írja le, hogyan segíthetünk Önnek...",
+      "submit": "Üzenet Küldése",
+      "sending": "Küldés folyamatban...",
+      "errorNetwork": "Hálózati hiba. Kérjük, próbálja újra később.",
+      "errorDefault": "Küldés sikertelen. Kérjük, próbálja újra később."
+    }
+  },
+  "footer": {
+    "tagline": "Steirarein — Szívvel, Türelemmel és Tapasztalattal",
+    "subtitle": "GreenClean – Segítség, ami könnyebbé teszi a mindennapokat."
+  },
+  "thankYou": {
+    "title": "Köszönjük!",
+    "message": "Megkaptuk üzenetét, és a lehető leghamarabb felvesszük Önnel a kapcsolatot.",
+    "backHome": "Vissza a Főoldalra"
+  },
+  "meta": {
+    "title": "Steirarein – Szívvel, Türelemmel és Tapasztalattal",
+    "description": "Steirarein – Háztartási Gondozás & Takarítás. Alapos takarítás, mosás, bevásárlás, főzés, szervezés. Kapcsolat: 0660 530 7701"
+  }
+}

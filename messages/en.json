@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "Steirarein – With Heart, Patience and Experience",
+    "subtitle": "Cleanliness with heart — Your well-kept home in the best hands",
+    "description": "We know that a well-maintained household should not only be clean, but also harmonious. With patience, experience and an open ear for your wishes, we create order and well-being in your home."
+  },
+  "services": {
+    "kicker": "Our Services",
+    "title": "Household Care & Cleaning",
+    "list": {
+      "cleaning": "Thorough cleaning of apartment or house",
+      "laundry": "Washing and ironing laundry",
+      "shopping": "Running errands and shopping",
+      "cooking": "Preparation of simple meals",
+      "organization": "Household organization (e.g. bills, appointments)",
+      "support": "Empathetic support in everyday life"
+    },
+    "price": "Complete apartment cleaning from €150 — Hourly rate from €28",
+    "cookingTitle": "Cooking & Organization Help",
+    "cookingDescription": "Support with cooking and serving — Care, trust and an eye for detail."
+  },
+  "contact": {
+    "title": "Contact",
+    "phoneLabel": "Phone",
+    "orWrite": "Or write to us:",
+    "emailNote": "We will get back to you as soon as possible. Email:",
+    "form": {
+      "nameLabel": "Your Name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "Describe how we can help you...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "errorNetwork": "Network error. Please try again later.",
+      "errorDefault": "Sending failed. Please try again later."
+    }
+  },
+  "footer": {
+    "tagline": "Steirarein — With Heart, Patience and Experience",
+    "subtitle": "GreenClean – Help that makes everyday life easier."
+  },
+  "thankYou": {
+    "title": "Thank You!",
+    "message": "We have received your message and will get back to you as soon as possible.",
+    "backHome": "Back to Home"
+  },
+  "meta": {
+    "title": "Steirarein – With Heart, Patience and Experience",
+    "description": "Steirarein – Household Care & Cleaning. Thorough cleaning, laundry, shopping, cooking, organization. Contact: 0660 530 7701"
+  }
+}

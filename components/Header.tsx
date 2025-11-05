@@ -1,29 +1,36 @@
+"use client";
+
 import Logo from "./Logo";
+import { useTranslations } from "next-intl";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Header() {
-  return (
-    <header className="hero" aria-label="Steirarein hero">
-      <div className="hero-left">
-        <div className="brand">
-          <Logo size={48} />
-        </div>
-        <h1 className="title">Steirarein – Mit Herz, Geduld und Erfahrung</h1>
-        <p className="subtitle">
-          Sauberkeit mit Herz — Ihr gepflegtes Zuhause in besten Händen
-        </p>
-        <p>
-          Wir wissen, dass ein gepflegter Haushalt nicht nur sauber, sondern
-          auch harmonisch sein soll. Mit Geduld, Erfahrung und einem offenen Ohr
-          für Ihre Wünsche schaffen wir Ordnung und Wohlbefinden in Ihrem
-          Zuhause.
-        </p>
-      </div>
+  const t = useTranslations("header");
 
-      <img
-        src="/hero-image.jpg"
-        alt="Steirarein cleaning"
-        className="hero-img"
-      />
-    </header>
+  return (
+    <>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <Logo size={40} />
+          <LanguageSelector />
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className="hero" aria-label="Steirarein hero">
+        <div className="hero-left">
+          <h1 className="title">{t("title")}</h1>
+          <p className="subtitle">{t("subtitle")}</p>
+          <p>{t("description")}</p>
+        </div>
+
+        <img
+          src="/hero-image.jpg"
+          alt="Steirarein cleaning"
+          className="hero-img"
+        />
+      </header>
+    </>
   );
 }

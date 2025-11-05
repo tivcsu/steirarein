@@ -1,0 +1,53 @@
+{
+  "header": {
+    "title": "Steirarein – Mit Herz, Geduld und Erfahrung",
+    "subtitle": "Sauberkeit mit Herz — Ihr gepflegtes Zuhause in besten Händen",
+    "description": "Wir wissen, dass ein gepflegter Haushalt nicht nur sauber, sondern auch harmonisch sein soll. Mit Geduld, Erfahrung und einem offenen Ohr für Ihre Wünsche schaffen wir Ordnung und Wohlbefinden in Ihrem Zuhause."
+  },
+  "services": {
+    "kicker": "Unsere Leistungen",
+    "title": "Haushaltsbetreuung & Reinigung",
+    "list": {
+      "cleaning": "Gründliche Reinigung von Wohnung oder Haus",
+      "laundry": "Wäsche waschen und bügeln",
+      "shopping": "Erledigung von Einkäufen",
+      "cooking": "Zubereitung einfacher Mahlzeiten",
+      "organization": "Organisation des Haushalts (z. B. Rechnungen, Termine)",
+      "support": "Einfühlsame Unterstützung im Alltag"
+    },
+    "price": "Komplettreinigung einer Wohnung ab 150 € — Stundenpreis ab 28 €",
+    "cookingTitle": "Koch- & Organisationshilfe",
+    "cookingDescription": "Unterstützung beim Kochen und Servieren — Sorgfalt, Vertrauen und ein Auge fürs Detail."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "phoneLabel": "Telefon",
+    "orWrite": "Oder schreiben Sie uns:",
+    "emailNote": "Wir melden uns so bald wie möglich. E-Mail:",
+    "form": {
+      "nameLabel": "Ihr Name",
+      "namePlaceholder": "Max Mustermann",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "ihre@email.com",
+      "messageLabel": "Ihre Nachricht",
+      "messagePlaceholder": "Beschreiben Sie, wie wir Ihnen helfen können...",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "errorNetwork": "Netzwerkfehler. Bitte versuchen Sie es später.",
+      "errorDefault": "Senden fehlgeschlagen. Bitte versuchen Sie es später."
+    }
+  },
+  "footer": {
+    "tagline": "Steirarein — Mit Herz, Geduld und Erfahrung",
+    "subtitle": "GreenClean – Hilfe, die den Alltag leichter macht."
+  },
+  "thankYou": {
+    "title": "Vielen Dank!",
+    "message": "Wir haben Ihre Nachricht erhalten und melden uns so bald wie möglich bei Ihnen.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "meta": {
+    "title": "Steirarein – Mit Herz, Geduld und Erfahrung",
+    "description": "Steirarein – Haushaltsbetreuung & Reinigung. Gründliche Reinigung, Wäsche, Einkäufe, Kochen, Organisation. Kontakt: 0660 530 7701"
+  }
+}

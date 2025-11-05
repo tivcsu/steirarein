@@ -42,7 +42,28 @@ body {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 0 24px 40px;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Header / hero */
@@ -52,6 +73,7 @@ body {
   gap: 48px;
   align-items: center;
   margin-bottom: 64px;
+  margin-top: 40px;
 }
 
 .hero-left {
@@ -62,7 +84,6 @@ body {
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 .logo {
@@ -111,9 +132,14 @@ body {
 }
 
 @media (max-width: 968px) {
+  .navbar-content {
+    padding: 0 20px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     gap: 32px;
+    margin-top: 24px;
   }
 
   .hero-img {
@@ -135,7 +161,7 @@ body {
   }
 
   .container {
-    padding: 32px 20px;
+    padding: 0 20px 32px;
   }
 }
 
@@ -365,4 +391,73 @@ a {
 
 a:hover {
   color: var(--brand-dark);
+}
+
+/* Language Selector */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.language-selector-button:hover {
+  border-color: var(--brand-primary);
+  background: var(--bg-subtle);
+}
+
+.language-selector-current {
+  min-width: 60px;
+  text-align: left;
+}
+
+.language-selector-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 140px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.language-selector-option {
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-family: inherit;
+}
+
+.language-selector-option:hover {
+  background: var(--bg-subtle);
+}
+
+.language-selector-option.active {
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  font-weight: 600;
 }

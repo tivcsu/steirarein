@@ -1,12 +1,20 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function ContactForm() {
   const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("contact.form");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,43 +44,46 @@ export default function ContactForm() {
 
       const json = await res.json();
       if (!res.ok) {
-        setErr(
-          json?.error ?? "Senden fehlgeschlagen. Bitte versuchen Sie es später."
-        );
+        setErr(json?.error ?? t("errorDefault"));
         setLoading(false);
         return;
       }
 
       // success -> redirect to thank-you
-      router.push("/thank-you");
+      router.push(`/${locale}/thank-you`);
     } catch (error: any) {
-      setErr("Netzwerkfehler. Bitte versuchen Sie es später.");
+      setErr(t("errorNetwork"));
       setLoading(false);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} aria-label="Kontaktformular">
+    <form onSubmit={handleSubmit} aria-label="Contact form">
       <div>
-        <label>Ihr Name</label>
-        <input name="name" type="text" placeholder="Max Mustermann" required />
-      </div>
-
-      <div>
-        <label>E-Mail</label>
+        <label>{t("nameLabel")}</label>
         <input
-          name="email"
-          type="email"
-          placeholder="ihre@email.com"
+          name="name"
+          type="text"
+          placeholder={t("namePlaceholder")}
           required
         />
       </div>
 
       <div>
-        <label>Ihre Nachricht</label>
+        <label>{t("emailLabel")}</label>
+        <input
+          name="email"
+          type="email"
+          placeholder={t("emailPlaceholder")}
+          required
+        />
+      </div>
+
+      <div>
+        <label>{t("messageLabel")}</label>
         <textarea
           name="message"
-          placeholder="Beschreiben Sie, wie wir Ihnen helfen können..."
+          placeholder={t("messagePlaceholder")}
           required
         />
       </div>
@@ -81,15 +92,17 @@ export default function ContactForm() {
       <input name="honeypot" type="text" style={{ display: "none" }} />
 
       {/* hCaptcha widget (site key provided via NEXT_PUBLIC_HCAPTCHA_SITEKEY) */}
-      <div>
-        <div
-          className="h-captcha"
-          data-sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ?? ""}
-        />
-      </div>
+      {mounted && (
+        <div>
+          <div
+            className="h-captcha"
+            data-sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ?? ""}
+          />
+        </div>
+      )}
 
       <button type="submit" disabled={loading}>
-        {loading ? "Wird gesendet..." : "Nachricht senden"}
+        {loading ? t("sending") : t("submit")}
       </button>
 
       {err && (

@@ -1,25 +1,28 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Services() {
+  const t = useTranslations("services");
+
   return (
     <div className="services">
-      <span className="kicker">Unsere Leistungen</span>
-      <h2>Haushaltsbetreuung & Reinigung</h2>
+      <span className="kicker">{t("kicker")}</span>
+      <h2>{t("title")}</h2>
       <ul className="bullet-list">
-        <li>Gründliche Reinigung von Wohnung oder Haus</li>
-        <li>Wäsche waschen und bügeln</li>
-        <li>Erledigung von Einkäufen</li>
-        <li>Zubereitung einfacher Mahlzeiten</li>
-        <li>Organisation des Haushalts (z. B. Rechnungen, Termine)</li>
-        <li>Einfühlsame Unterstützung im Alltag</li>
+        <li>{t("list.cleaning")}</li>
+        <li>{t("list.laundry")}</li>
+        <li>{t("list.shopping")}</li>
+        <li>{t("list.cooking")}</li>
+        <li>{t("list.organization")}</li>
+        <li>{t("list.support")}</li>
       </ul>
 
-      <div className="price">
-        Komplettreinigung einer Wohnung ab 150 € — Stundenpreis ab 28 €
-      </div>
+      <div className="price">{t("price")}</div>
 
-      <h3>Koch- & Organisationshilfe</h3>
+      <h3>{t("cookingTitle")}</h3>
       <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>
-        Unterstützung beim Kochen und Servieren — Sorgfalt, Vertrauen und ein
-        Auge fürs Detail.
+        {t("cookingDescription")}
       </p>
     </div>
   );
