@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     const payload = {
       access_key: WEB3FORMS_KEY,
       subject: "Neue Anfrage von Steirarein Webseite",
-      reply_to: "vadarti@gmail.com",
+      reply_to: "ausztriabanmagyarul@gmail.com",
       name,
       email,
       message,

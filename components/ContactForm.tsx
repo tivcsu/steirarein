@@ -3,6 +3,7 @@
 import React, { FormEvent, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function ContactForm() {
   const router = useRouter();
@@ -11,6 +12,11 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [hcaptchaToken, setHcaptchaToken] = useState<string>("");
+
+  const handleVerificationSuccess = (token: string, ekey: string) => {
+    setHcaptchaToken(token);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -23,9 +29,6 @@ export default function ContactForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-
-    // get hcaptcha token (widget adds it as "h-captcha-response")
-    const hcaptchaToken = formData.get("h-captcha-response")?.toString() ?? "";
 
     const payload = {
       name: formData.get("name"),
@@ -87,19 +90,12 @@ export default function ContactForm() {
           required
         />
       </div>
-
+      <HCaptcha
+        sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ?? ""}
+        onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+      />
       {/* honeypot */}
       <input name="honeypot" type="text" style={{ display: "none" }} />
-
-      {/* hCaptcha widget (site key provided via NEXT_PUBLIC_HCAPTCHA_SITEKEY) */}
-      {mounted && (
-        <div>
-          <div
-            className="h-captcha"
-            data-sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ?? ""}
-          />
-        </div>
-      )}
 
       <button type="submit" disabled={loading}>
         {loading ? t("sending") : t("submit")}

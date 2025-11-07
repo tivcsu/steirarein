@@ -41,7 +41,9 @@ export default function Page() {
               }}
             >
               {t("emailNote")}{" "}
-              <a href="mailto:vadarti@gmail.com">vadarti@gmail.com</a>
+              <a href="mailto:ausztriabanmagyarul@gmail.com">
+                ausztriabanmagyarul@gmail.com
+              </a>
             </p>
           </aside>
         </section>
