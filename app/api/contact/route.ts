@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 
 type Body = {
   name?: string;
@@ -6,11 +7,16 @@ type Body = {
   message?: string;
   honeypot?: string | null;
   hcaptchaToken?: string | null;
+  locale?: string;
 };
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Body;
+
+    // Get locale from request body, default to 'de'
+    const locale = body.locale || "de";
+    const t = await getTranslations({ locale, namespace: "contact.errors" });
 
     // basic validation
     const name = (body.name ?? "").toString().trim();
@@ -21,11 +27,11 @@ export async function POST(request: Request) {
 
     if (honeypot) {
       // spam bot
-      return NextResponse.json({ error: "Spam detected" }, { status: 400 });
+      return NextResponse.json({ error: t("spamDetected") }, { status: 400 });
     }
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: "Fehlende Felder" }, { status: 400 });
+      return NextResponse.json({ error: t("missingFields") }, { status: 400 });
     }
 
     // verify hCaptcha
@@ -39,7 +45,7 @@ export async function POST(request: Request) {
 
     if (!hcaptchaToken) {
       return NextResponse.json(
-        { error: "Bitte bestätigen Sie das Captcha" },
+        { error: t("captchaRequired") },
         { status: 400 }
       );
     }
@@ -55,10 +61,7 @@ export async function POST(request: Request) {
 
     const verifyJson = await verifyRes.json();
     if (!verifyJson.success) {
-      return NextResponse.json(
-        { error: "Captcha-Verifizierung fehlgeschlagen" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: t("captchaFailed") }, { status: 400 });
     }
 
     // forward to Web3Forms
@@ -87,18 +90,17 @@ export async function POST(request: Request) {
 
     const wjson = await wRes.json();
     if (!wRes.ok) {
-      return NextResponse.json(
-        { error: "Fehler beim Senden der Nachricht" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: t("sendingFailed") }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch (e: any) {
     console.error("contact error:", e);
-    return NextResponse.json(
-      { error: "Interner Serverfehler" },
-      { status: 500 }
-    );
+
+    // Try to get locale from error context, fallback to 'de'
+    const locale = "de";
+    const t = await getTranslations({ locale, namespace: "contact.errors" });
+
+    return NextResponse.json({ error: t("internalError") }, { status: 500 });
   }
 }

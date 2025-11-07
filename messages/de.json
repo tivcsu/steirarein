@@ -35,6 +35,14 @@
       "sending": "Wird gesendet...",
       "errorNetwork": "Netzwerkfehler. Bitte versuchen Sie es später.",
       "errorDefault": "Senden fehlgeschlagen. Bitte versuchen Sie es später."
+    },
+    "errors": {
+      "spamDetected": "Spam erkannt",
+      "missingFields": "Fehlende Felder",
+      "captchaRequired": "Bitte bestätigen Sie das Captcha",
+      "captchaFailed": "Captcha-Verifizierung fehlgeschlagen",
+      "sendingFailed": "Fehler beim Senden der Nachricht",
+      "internalError": "Interner Serverfehler"
     }
   },
   "footer": {

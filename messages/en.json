@@ -35,6 +35,14 @@
       "sending": "Sending...",
       "errorNetwork": "Network error. Please try again later.",
       "errorDefault": "Sending failed. Please try again later."
+    },
+    "errors": {
+      "spamDetected": "Spam detected",
+      "missingFields": "Missing required fields",
+      "captchaRequired": "Please verify the captcha",
+      "captchaFailed": "Captcha verification failed",
+      "sendingFailed": "Error sending message",
+      "internalError": "Internal server error"
     }
   },
   "footer": {

@@ -36,6 +36,7 @@ export default function ContactForm() {
       message: formData.get("message"),
       honeypot: formData.get("honeypot"),
       hcaptchaToken,
+      locale,
     };
 
     try {

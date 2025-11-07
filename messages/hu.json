@@ -33,8 +33,16 @@
       "messagePlaceholder": "Írja le, hogyan segíthetünk Önnek...",
       "submit": "Üzenet Küldése",
       "sending": "Küldés folyamatban...",
-      "errorNetwork": "Hálózati hiba. Kérjük, próbálja újra később.",
+      "errorNetwork": "Hálózati hiba. Kérjük, próbálja újra későb.",
       "errorDefault": "Küldés sikertelen. Kérjük, próbálja újra később."
+    },
+    "errors": {
+      "spamDetected": "Spam észlelve",
+      "missingFields": "Hiányzó mezők",
+      "captchaRequired": "Kérjük, ellenőrizze a captcha-t",
+      "captchaFailed": "Captcha ellenőrzés sikertelen",
+      "sendingFailed": "Hiba az üzenet küldésekor",
+      "internalError": "Belső szerverhiba"
     }
   },
   "footer": {
