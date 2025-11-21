@@ -17,6 +17,11 @@ export default function Page() {
         <section className="section">
           <div>
             <Services />
+            <img
+              src="/footer-image.webp"
+              alt="Steirarein cleaning, cooking and organization"
+              className="hero-img"
+            />
           </div>
 
           <aside className="contact-card" aria-labelledby="contact-heading">

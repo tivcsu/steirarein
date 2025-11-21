@@ -26,7 +26,7 @@ export default function Header() {
         </div>
 
         <img
-          src="/hero-image.jpg"
+          src="/hero-image_v2.jpg"
           alt="Steirarein cleaning"
           className="hero-img"
         />

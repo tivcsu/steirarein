@@ -49,7 +49,7 @@ export default async function LocaleLayout({
         <script src="https://hcaptcha.com/1/api.js" async defer />
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/hero-image.jpg" />
+        <meta property="og:image" content="/hero-image_v2.jpg" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
